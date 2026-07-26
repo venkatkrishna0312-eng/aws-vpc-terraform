@@ -36,3 +36,11 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan -input=false
+        env:
+          TF_VAR_aws_region: ${{ vars.AWS_REGION }}
+          TF_VAR_vpc_cidr: ${{ vars.VPC_CIDR }}
+          TF_VAR_vpc_name: ${{ vars.VPC_NAME }}
+          TF_VAR_pub_subnet_cidr: ${{ vars.PUB_SUBNET_CIDR }}
+          TF_VAR_private_subnet_cidr: ${{ vars.PRIVATE_SUBNET_CIDR }}
+          TF_VAR_availability_zone: ${{ vars.AVAILABILITY_ZONE }}
+          
